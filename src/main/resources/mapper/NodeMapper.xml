@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.bgpm.mapper.NodeMapper">
+    <select id="findNodeByAsn" parameterType="String" resultType="com.example.bgpm.pojo.NodePojo">
+        SELECT * FROM bgp.merged_final_single WHERE asn = #{asn}
+    </select>
+    <select id="getAllInfo" resultType="com.example.bgpm.pojo.NodePojo">
+        SELECT * FROM bgp.merged_final_single
+    </select>
+    <select id="findNodeById" parameterType="Integer" resultType="com.example.bgpm.pojo.NodePojo">
+        SELECT * FROM bgp.merged_final_single WHERE id = #{id}
+    </select>
+</mapper>
